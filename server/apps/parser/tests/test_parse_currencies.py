@@ -7,7 +7,5 @@ CBR_CURRENCIES_COUNT = 34
 
 class ParseCurrenciesTestCase(TestCase):
     def test_mycommand(self):
-        args = []
-        opts = {}
-        call_command('parsecurrencies', *args, **opts)
+        call_command('parsecurrencies')
         self.assertEqual(Currency.objects.count(), CBR_CURRENCIES_COUNT)
