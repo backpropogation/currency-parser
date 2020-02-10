@@ -10,5 +10,12 @@ This readme descripes all steps for starting web app.
 * wait until ALL containers are up
 * `chmod +x migrate.sh`
 * `./migrate.sh`
+
+#### Create superuser
+* `docker exec -it $(docker ps | grep server_ | awk '{{ print $1 }}') python manage.py createsuperuser`
+
+#### Run parse command
+* docker exec -it $(docker ps | grep server_ | awk '{{ print $1 }}') python manage.py parsecurrencies
+
 ##### Backend address 
 * http://0:0:0:0:8000
